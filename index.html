@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>1CDO Online Repository</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+  <header>
+  <div class="header-inner">
+    <img src="images/logo.png" alt="1CDO Logo" class="logo">
+    <div class="brand">📘 1CDO Online Repository</div>
+    <div class="tagline">Internal Use Only</div>
+  </div>
+</header>
+
+
+  <main>
+    <!-- Login -->
+    <section id="login-section" class="center-card">
+      <h2>Secure Access</h2>
+      <p>Enter your Service Number to access the repository</p>
+      <input id="serviceNumber" type="text" placeholder="Service number" autocomplete="off" />
+      <div class="row">
+        <button id="accessBtn">Access</button>
+        <button id="helpBtn" class="secondary">Help</button>
+      </div>
+      <p id="error" class="error"></p>
+    </section>
+
+    <!-- Repo / doc list -->
+    <section id="repo-section" class="container" style="display:none;">
+      <div class="toolbar">
+        <div>Welcome, <span id="snDisplay"></span></div>
+        <div>
+          <button id="logoutBtn" class="danger">Logout</button>
+        </div>
+      </div>
+
+      <h3>Available Documents</h3>
+      <ul id="docList" class="doc-list"></ul>
+    </section>
+
+    <!-- Viewer (text/html) -->
+    <section id="viewer-section" class="viewer" style="display:none;">
+      <div class="viewer-top">
+        <button id="backBtn" class="secondary">⬅ Back to List</button>
+        <div class="viewer-meta">Viewing: <span id="docTitle"></span></div>
+      </div>
+      <div id="docContainer" class="doc-container" tabindex="0" aria-live="polite">
+        <!-- Document HTML will be injected here -->
+      </div>
+    </section>
+
+    <!-- Optional help modal -->
+    <div id="helpModal" class="modal" aria-hidden="true" style="display:none;">
+      <div class="modal-card">
+        <h4>How to access</h4>
+        <p>Enter your service number and press Access. If you cannot view a document, contact the repository administrator.</p>
+        <button id="closeHelp" class="secondary">Close</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
